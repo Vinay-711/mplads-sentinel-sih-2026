@@ -1,0 +1,20 @@
+project-includes = [
+    "backend",
+    "data",
+    "scripts",
+    "features",
+    "database",
+]
+project-excludes = [
+    "**/__pycache__",
+    ".pytest_cache",
+]
+search-path = [
+    "backend",
+    ".",
+]
+python-version = "3.14.0"
+infer-with-first-use = false
+
+[errors]
+missing-import = "warn"
