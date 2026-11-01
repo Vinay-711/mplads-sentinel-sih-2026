@@ -2,7 +2,47 @@
 **Smart India Hackathon (SIH) 2026**  
 **Domain**: Ministry of Statistics and Programme Implementation (MoSPI) – Member of Parliament Local Area Development Scheme (MPLADS)  
 **Database**: PostgreSQL 16+ with `pg_trgm` & Full-Text Search (FTS)  
-**Status**: Phase 3 Production Release (Validated, Fully Searchable, 100% Relational Integrity)
+**Status**: Research and hackathon prototype; production readiness is not established.
+
+[![Feature quality](https://github.com/Vinay-711/mplads-sentinel-sih-2026/actions/workflows/quality.yml/badge.svg)](https://github.com/Vinay-711/mplads-sentinel-sih-2026/actions/workflows/quality.yml)
+
+## Reproduce the feature checks
+
+From a fresh clone, use Python 3.11 or 3.14:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+python -m pip install -r requirements-test.txt
+python -m pytest features/tests -q
+```
+
+The feature suite checks date/duration calculations, financial ratios, progress gaps,
+category benchmarks, raw-data preservation and index alignment. It uses synthetic
+fixtures and the checked-in cleaned CSVs; no database, credentials, model downloads
+or network calls are needed after installation. GitHub Actions runs this same command
+on pull requests and pushes to `main` on both Python versions.
+
+This workflow does **not** run the PostgreSQL-backed API/risk integration suite or
+validate deployment, source authenticity, model accuracy or real-world impact.
+See [backend setup](backend/README.md) for the database-dependent application.
+Historical validation tables below describe prior recorded runs, not guarantees
+about a new environment; rerun the relevant commands before relying on them.
+
+## Data and interpretation boundaries
+
+The repository includes [sample project generation](data/scripts/generate_sample_projects.py)
+as well as source-ingestion scripts and provenance records. Treat sample project-level
+records as demonstration data, not verified findings about real projects or agencies.
+Risk indicators support human review; they do not establish fraud or causation.
+Check each dataset's provenance and reporting date before any external use.
+
+## Contributing
+
+Use a focused branch and pull request. For calculation changes, include a regression
+fixture with expected outputs and run the feature suite above. Preserve raw columns,
+project identifiers and row alignment. Never include real credentials or private data.
+Document any database-dependent checks separately from offline test results.
 
 ---
 

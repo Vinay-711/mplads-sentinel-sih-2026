@@ -1,0 +1,4 @@
+# Lightweight feature tests; no database, API keys or model downloads.
+numpy==2.3.4
+pandas==2.3.3
+pytest==8.4.2
