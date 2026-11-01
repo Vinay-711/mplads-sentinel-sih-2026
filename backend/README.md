@@ -1,10 +1,10 @@
 # MPLADS Backend API Service
 **Smart India Hackathon (SIH) 2026**  
 **Framework**: FastAPI 0.116+ | SQLAlchemy 2.0+ | Pydantic v2 | PostgreSQL 16+  
-**Status**: Phase 4 Production Backend (Fully Validated & Tested)
+**Status**: Database-backed research prototype; validation depends on the configured database and test scope.
 
 > [!IMPORTANT]
-> **Data Grounding**: This FastAPI backend directly connects to and serves production data from the **PostgreSQL database (`mplads_db`) created and validated in Phase 3**. It does not mock data, invent incompatible columns, or overwrite existing tables. All models, queries, and aggregations strictly conform to the 13 relational tables and 8 analytical views established in Phase 3.
+> **Data Grounding**: This FastAPI backend directly connects to and serves configured data from the **PostgreSQL database (`mplads_db`) created and validated in Phase 3**. It does not mock data, invent incompatible columns, or overwrite existing tables. All models, queries, and aggregations strictly conform to the 13 relational tables and 8 analytical views established in Phase 3.
 
 ---
 
@@ -558,3 +558,7 @@ tests/test_risk_engine.py .......................................        [100%]
 * **Failed**: 0
 * **SQLAlchemy Errors**: 0
 * **Data Mismatches**: 0
+
+## Interpreting verification evidence
+
+The [root guide](../README.md) distinguishes offline feature tests from database integration checks. Run the relevant tests in [tests](tests) against a disposable configured database and inspect fixture requirements first. Do not infer deployment readiness or dataset provenance from an architectural phase label. No production acceptance or fresh integration run is asserted by this documentation update.

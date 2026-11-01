@@ -379,3 +379,11 @@ This single orchestrator runs:
 - No cleartext passwords or secrets are committed to this repository.
 - Local configuration is managed strictly via `.env` (git-ignored).
 - All SQL views and scripts use parameterized queries to prevent SQL injection vulnerabilities.
+
+## Choose the right verification path
+
+- [Backend setup and API](backend/README.md): database-backed application and prerequisites.
+- [.github/workflows/quality.yml](.github/workflows/quality.yml): focused offline feature checks.
+- [backend/tests](backend/tests): API, database and risk-model test sources; inspect fixtures and environment needs before running.
+
+Distinguish demonstration indicators from findings about real projects. A risk flag is a review aid, not evidence of wrongdoing. A passing offline feature workflow does not certify the PostgreSQL integration or the provenance of a dataset.
