@@ -6,6 +6,8 @@
 
 [![Feature quality](https://github.com/Vinay-711/mplads-sentinel-sih-2026/actions/workflows/quality.yml/badge.svg)](https://github.com/Vinay-711/mplads-sentinel-sih-2026/actions/workflows/quality.yml)
 
+[Explore my other AI projects, including a health assistant and agent payment policies →](https://github.com/Vinay-711)
+
 ## Reproduce the feature checks
 
 From a fresh clone, use Python 3.11 or 3.14:
